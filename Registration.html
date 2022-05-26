@@ -1,0 +1,161 @@
+<html>
+<head>
+    <title>
+        Fashion World
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        
+        .page-wrapper {
+            margin: 30px 30px 30px 30px;
+            align-content: center;
+        }
+     
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <nav>
+        <ul id="menu" style="margin-top:13px;">
+            <li>
+                <a href="Home.html">Home</a>
+            </li>
+            <li>
+                <a href="AboutUs.html">About Us</a>
+            </li>
+            <li>
+                <a href="Registration.html">Registration</a>
+            </li>
+            <li>
+                <a href="Login.html">Login</a>
+            </li>
+            <li>
+                <a href="Contact.html">Contact us</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="imgcontainer">
+        <img src="registration.jpg" alt="Avatar" class="avatar" style="height:253px;width:367px;">
+    </div>
+
+
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="login-logo" style="text-align: center;">
+                    <h3>Registration Here</h3>
+                </div>
+                <div class="login-form">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="inputEmail4" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your Name">
+                        </div>
+                        <div class="col-md-12">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="Emailid" placeholder="Enter your email id">
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <label for="inputPassword4" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="pass" placeholder="Enter your password">
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <label for="inputPassword5" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="cpass" placeholder="Enter your password">
+                        </div>
+                        <div class="col-12">
+                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Enter your Address">
+                        </div>
+                        <div class="col-12">
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
+                            <label for="inputAddress2" class="form-label">Mobile</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile Number">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="Enter your City">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Maharashtra</option>
+                                <option>Gujrat</option>
+                                <option>MP</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div>
+                    
+                            <small id="error" style="color: red;"></small>
+
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary" value=" save" onclick="return Validate()">Sign in</button><br>
+                                <button type="reset" class="btn btn-primary" style="margin-top:53px;" onclick="return Clear()">cancel</button>
+                            </div>
+                         
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        //function Clear() {
+        //    sessionStorage.clear();
+        //}
+        function Validate() {
+            var email = document.getElementById("Emailid").value;
+            var pass = document.getElementById("pass").value;
+            var cpass = document.getElementById("cpass").value;
+            if (pass == cpass) {
+                document.getElementById("error").innerHTML = "";
+                localStorage.setItem("Emailid", email);
+                localStorage.setItem("pass", pass);
+                alert('successfully registered');
+
+                return true;
+            }
+            else {
+                document.getElementById("error").innerHTML = "Password does not match";
+                return false;
+            }
+            // support of localstorage on the browser
+            //if (localStorage) {
+            //   localStorage.setItem("inputEmail", email);
+            //   localStorage.setItem("inputPassword", password);
+            //  localStorage.setItem("inputAddress", Address);
+            //   localStorage.setItem("mobile", Mobile);
+            //    localStorage.setItem("inputCity", City);
+            //    localStorage.setItem("inputState", State);
+            //   alert('successfully registered');
+            //  }
+            //  else {
+            ////     console.log('does not support local storage');
+            ////  }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
